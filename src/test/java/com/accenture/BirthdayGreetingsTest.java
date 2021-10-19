@@ -2,28 +2,32 @@ package com.accenture;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BirthdayGreetingsTest {
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-    LocalDate localDate = LocalDate.now();
+    // DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     @Test
     public void whenBirthdayOfJohnIsToday_thenMailBodyShouldbeAsExpected() {
-        LocalDate date = localDate.of(2021, 10, 19);
+        LocalDate date = LocalDate.of(2021, 10, 19);
+        LocalDate now = LocalDate.now();
         Person john = new Person("John", "Jack", date, "john.jack@email.com");
-        assertEquals(dtf.format(localDate), dtf.format(john.getDateOfBirth()));
+        assertTrue(BirthdayGreetings.checkDates(date, now));
 
     }
 
     @Test
     public void whenBirthdayOfJohnIsToday_thenMailBodyNotShouldbeAsExpected() {
-        LocalDate date = localDate.of(2020, 10, 19);
+        LocalDate now = LocalDate.now();
+        LocalDate date = LocalDate.of(2020, 10, 19);
         Person mary = new Person("Mary", "Ann", date, "mary.ann@foobar.com");
-        assertFalse(dtf.format(localDate) == dtf.format(mary.getDateOfBirth()));
+        assertFalse(BirthdayGreetings.checkDates(date, now));
 
     }
 }
