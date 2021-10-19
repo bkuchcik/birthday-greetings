@@ -8,6 +8,5 @@ public class Main {
     public static void main(String[] args) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.now();
-        System.out.println(dtf.format(localDate));
     }
 }
