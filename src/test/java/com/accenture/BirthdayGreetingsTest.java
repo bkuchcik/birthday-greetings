@@ -16,7 +16,7 @@ class BirthdayGreetingsTest {
 
     @Test
     public void whenBirthdayOfJohnIsToday_thenMailBodyShouldbeAsExpected() throws MessagingException {
-        LocalDate date = LocalDate.of(2021, 10, 19);
+        LocalDate date = LocalDate.of(2021, 10, 20);
         LocalDate now = LocalDate.now();
         Person john = new Person("John", "Jack", date, "john.jack@email.com");
         assertTrue(BirthdayGreetings.checkDates(john, now));
