@@ -17,6 +17,10 @@ public class Person {
         this.mail = mail;
     }
 
+    public Person() {
+        
+    }
+
     public String getFirstname() {
         return firstname;
     }

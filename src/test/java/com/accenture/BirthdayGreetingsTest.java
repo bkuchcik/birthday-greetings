@@ -2,6 +2,8 @@ package com.accenture;
 
 import org.junit.jupiter.api.Test;
 
+import javax.mail.MessagingException;
+import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,20 +16,19 @@ class BirthdayGreetingsTest {
     // DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     @Test
-    public void whenBirthdayOfJohnIsToday_thenMailBodyShouldbeAsExpected() {
-        LocalDate date = LocalDate.of(2021, 10, 19);
-        LocalDate now = LocalDate.now();
+    public void whenBirthdayOfJohnIsToday_thenMailBodyShouldbeAsExpected() throws MessagingException, IOException {
+        LocalDate date = LocalDate.of(2021, 10, 20);
         Person john = new Person("John", "Jack", date, "john.jack@email.com");
-        assertTrue(BirthdayGreetings.checkDates(date, now));
+        assertTrue(BirthdayGreetings.checkDates(john));
 
     }
 
     @Test
-    public void whenBirthdayOfJohnIsToday_thenMailBodyNotShouldbeAsExpected() {
-        LocalDate now = LocalDate.now();
+    public void whenBirthdayOfJohnIsToday_thenMailBodyNotShouldbeAsExpected() throws MessagingException, IOException {
+
         LocalDate date = LocalDate.of(2020, 10, 19);
         Person mary = new Person("Mary", "Ann", date, "mary.ann@foobar.com");
-        assertFalse(BirthdayGreetings.checkDates(date, now));
+        assertFalse(BirthdayGreetings.checkDates(mary));
 
     }
 }

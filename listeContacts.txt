@@ -1,0 +1,4 @@
+Aminata,Diagne,1994-10-21,aminata.dia@email.com
+Auriane,Gregoire,2021-10-20,auriane.gre@gmail.com
+Hamid,Boudjerda,1992-12-31,hamid.bou@email.com
+Mina,Taifour,1993-10-15,mina.tai@gmail.com
