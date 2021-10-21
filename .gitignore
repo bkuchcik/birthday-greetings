@@ -7,7 +7,7 @@ password.txt
 
 # Ignore Gradle build output directory
 build
-
+out
 *.iml
 
 
