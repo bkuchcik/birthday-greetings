@@ -15,16 +15,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BirthdayGreetings {
-    /* static public boolean checkDates(LocalDate birthDate, LocalDate currentDate) {
-        Instant instantBirth = birthDate.atStartOfDay(ZoneId.systemDefault()).toInstant().truncatedTo(ChronoUnit.DAYS);
-        Instant instantCurrent = currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant().truncatedTo(ChronoUnit.DAYS);
-        // DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        if (instantBirth.equals(instantCurrent)) {
-            return true;
-        }
-        return false;
-    } */
-    public  List<Person> recupererListeAmis() throws IOException {
+    public List<Person> recupererListeAmis() throws IOException {
 
         Path path = Paths.get("listeContacts.txt");
         Scanner scanner = new Scanner(path);
@@ -55,10 +46,10 @@ public class BirthdayGreetings {
     }
 
 
-    public  void whoSbirthday() throws IOException, MessagingException {
-        List<Person> amis=  recupererListeAmis();
-        for (Person p: amis){
-           checkDates(p);
+    public void whoSbirthday() throws IOException, MessagingException {
+        List<Person> amis = recupererListeAmis();
+        for (Person p : amis) {
+            checkDates(p);
         }
 
 

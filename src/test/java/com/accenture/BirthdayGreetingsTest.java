@@ -25,10 +25,8 @@ class BirthdayGreetingsTest {
 
     @Test
     public void whenBirthdayOfJohnIsToday_thenMailBodyNotShouldbeAsExpected() throws MessagingException, IOException {
-
         LocalDate date = LocalDate.of(2020, 10, 19);
         Person mary = new Person("Mary", "Ann", date, "mary.ann@foobar.com");
         assertFalse(BirthdayGreetings.checkDates(mary));
-
     }
 }
